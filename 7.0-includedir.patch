@@ -1,0 +1,11 @@
+--- origsrc/alkimia-7.0/src/CMakeLists.txt	2018-01-05 07:47:41.677028800 -0600
++++ src/alkimia-7.0/src/CMakeLists.txt	2018-03-05 04:27:05.957069500 -0600
+@@ -36,7 +36,7 @@ generate_export_header(alkimia BASE_NAME
+ 
+ set_target_properties(alkimia PROPERTIES VERSION ${ALKIMIA_LIB_VERSION} SOVERSION ${ALKIMIA_LIB_SOVERSION})
+ set_target_properties(alkimia PROPERTIES OUTPUT_NAME alkimia${ALKIMIA_LIB_SUFFIX})
+-set(INCLUDE_INSTALL_DIR include/alkimia/${ALKIMIA_INCLUDE_SUFFIX})
++set(INCLUDE_INSTALL_DIR ${CMAKE_INSTALL_PREFIX}/include/alkimia/${ALKIMIA_INCLUDE_SUFFIX})
+ 
+ if (NOT WIN32)
+    configure_file(${CMAKE_CURRENT_SOURCE_DIR}/libalkimia.pc.in ${CMAKE_CURRENT_BINARY_DIR}/libalkimia${ALKIMIA_PATH_SUFFIX}.pc IMMEDIATE @ONLY)

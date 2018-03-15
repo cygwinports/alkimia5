@@ -1,0 +1,23 @@
+inherit kf5
+
+NAME="alkimia5"
+VERSION=7.0
+RELEASE=1
+CATEGORY="Libs"
+SUMMARY="KDE financial library"
+DESCRIPTION="A library with common classes and functionality for KDE finance
+applications."
+HOMEPAGE="http://community.kde.org/Alkimia/libalkimia"
+SRC_URI="mirror://kde/stable/alkimia/${VERSION}/src/alkimia-${VERSION}.tar.xz"
+SRC_DIR="alkimia-${VERSION}"
+PATCH_URI="7.0-includedir.patch"
+
+PKG_NAMES="libalkimia5_7 libalkimia5-devel"
+libalkimia5_7_CONTENTS="usr/bin/cygalkimia5-7.dll usr/share/doc/"
+libalkimia5_devel_REQUIRES="libgmp-devel libQt5Core-devel"
+libalkimia5_devel_CONTENTS="
+	usr/include/alkimia/Qt5/
+	usr/lib/cmake/LibAlkimia5-*/
+	usr/lib/libalkimia5.dll.a
+	usr/lib/pkgconfig/libalkimia5.pc
+"
